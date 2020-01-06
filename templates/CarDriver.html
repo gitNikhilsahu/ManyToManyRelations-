@@ -1,0 +1,16 @@
+{% extends 'Base.html' %}
+
+{% block title %}CarDriver{% endblock %}
+
+{% block content %}
+
+<div>
+    {% for instance in items %}
+        <h2>Driver Name: {{ instance.dname }}</h2>
+        {% for car in instance.car_set.all %}
+        <h4>Car: {{ car.cname }}</h4>
+        {% endfor %}
+    {% endfor %}
+</div>
+
+{% endblock %}
